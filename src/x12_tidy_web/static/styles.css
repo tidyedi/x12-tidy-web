@@ -223,20 +223,20 @@ button.ghost { background: transparent; }
    other. */
 .panel-warning.is-fatal::before { content: "\2715"; }
 
-/* Same callout shape as .panel-warning, but blue/informational rather than
-   amber/cautionary -- for a note that reassures ("this is correct, not a
-   bug") rather than one that warns. */
+/* Deliberately NOT shaped like .panel-warning -- no border, no left accent
+   bar, no icon badge. Those are the alert affordance, and this note isn't an
+   alert: it's reassurance ("this is correct, not a bug"). A left border +
+   badge in blue still reads as "heads up" by shape alone, regardless of
+   color, so this is just a soft tint with a bold lead-in instead. */
 .panel-note {
   margin: .6rem 0 0;
-  padding: .6rem .8rem;
-  border: 1px solid #a9cdf5;
-  border-left: 4px solid var(--accent);
+  padding: .55rem .8rem;
   border-radius: 6px;
-  background: #eef5ff;
+  background: #f2f6fc;
   color: var(--ink);
   font-size: .92rem;
 }
-.panel-note::before { content: "\2139\FE0F"; margin-right: .45rem; }
+.panel-note strong { color: #1a56c4; }
 
 .result-grid {
   display: grid;
