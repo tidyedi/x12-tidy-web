@@ -1265,7 +1265,7 @@ source = { git = "https://github.com/tidyedi/x12-tidy.git?rev=main#04bffa4a4bbdd
 
 [[package]]
 name = "x12-tidy-web"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },

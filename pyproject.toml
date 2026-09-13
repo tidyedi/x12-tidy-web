@@ -1,6 +1,6 @@
 [project]
 name = "x12-tidy-web"
-version = "0.1.0"
+version = "0.2.0"
 description = "Web front end for x12-tidy: paste malformed X12 EDI, get an iterative repair and a downloadable report"
 readme = "README.md"
 requires-python = ">=3.11"
