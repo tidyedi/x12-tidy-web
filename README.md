@@ -43,8 +43,8 @@ Want to help? See [`CONTRIBUTING.md`](CONTRIBUTING.md).
    plain-English message, and byte offset into your original text.
 3. **Your choice.** The corrected string is offered, never forced. Copy it, or
    don't.
-4. **Download.** Export the whole run as JSON, Markdown, HTML, plain text, or a
-   CSV of findings.
+4. **View or download.** Export the whole run as JSON, Markdown, HTML, plain
+   text, or a CSV of findings — open it in a new tab first, or save it.
 
 ## Run it locally
 

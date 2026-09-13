@@ -49,6 +49,34 @@ Changes on `main` since the v0.1.0 tag, not yet cut as a new version.
   no-account path — falling back to a GitHub discussion otherwise. The
   post-repair prompt is a clearer callout and pre-fills the run's verdict,
   version, and stop reason into the message.
+- The EDI textarea's placeholder tells a first-time visitor what to do
+  instead of only showing raw EDI shape, and a plain page reload now clears
+  the saved draft (an in-tab trip to `/codes` and back still restores it).
+- The verdict banner (clean / residual / fail) now gets the same visual
+  treatment as the privacy callout — circular icon badge, thicker accent bar,
+  stronger tint, shadow — and each state's color matches its corresponding
+  severity pill exactly, so the banner and the pills read as one consistent
+  color language.
+- Severity descriptions on a pass moved from an always-visible legend under
+  every pass to a hover tooltip on each chip, with an explicit "hover a chip"
+  hint so the affordance isn't silent (live app + static demo).
+- The clean verdict now distinguishes "already conformant; nothing needed
+  fixing" from "repaired and now conformant, with nothing left to fix" —
+  previously it read the same either way, which contradicted the sub-line
+  when earlier passes had, in fact, changed bytes.
+- The ISA fixed-width padding note is now a visible blue callout (matching
+  the amber "not conformant" callout's weight) instead of a easy-to-miss gray
+  hint line.
+- The verdict now repeats at the end of the pass list, so a visitor who
+  scrolled through several passes doesn't have to scroll back to the top to
+  see the final status. The downloadable report moved from a small
+  select+button tucked into the "Repair passes" heading to its own callout at
+  the end of the results, and gained a **View** button (opens in a new tab)
+  alongside **Download**.
+- The downloaded HTML report now carries the app's favicon and links
+  "x12-tidy-web" to <https://repair.tidyedi.com> and "x12-tidy" to its exact
+  source commit, so a saved or forwarded report still shows where it came
+  from.
 
 ## v0.1.0 — 2026-09-06
 
@@ -94,4 +122,4 @@ interchange, get an iteratively-repaired copy and a per-pass report.
 
 ### Not yet done
 
-An update mailing list and a few marketing/links items — see the open issues.
+An update mailing list and a few marketing/links items.
