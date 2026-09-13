@@ -123,11 +123,12 @@
           <pre id="exploded"></pre>
         </details>
         <p id="isa-pad-note" class="panel-note" hidden>
-          Runs of spaces in the ISA header are correct: ISA is a fixed-width
-          record, so every element is padded to an exact size (ISA05/07 to 2,
-          ISA06/08 to 15, and so on). VAN services and fixed-offset parsers read
-          the ISA by byte position, so the padding is required — see the
-          <code>isa.*</code> findings below.
+          <strong>This is expected, not an error:</strong> ISA is a fixed-width
+          record, so x12-tidy pads short elements with spaces to their exact
+          size (ISA05/07 to 2, ISA06/08 to 15, and so on) — the runs of spaces
+          you see are correct output. VAN services and fixed-offset parsers
+          rely on that exact byte alignment, which is also why the
+          <code>isa.*</code> findings below flagged the original short values.
         </p>
       </div>
 
