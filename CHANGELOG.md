@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-Changes on `main` since the v0.1.0 tag, not yet cut as a new version.
+Changes on `main` since the v0.2.0 tag, not yet cut as a new version.
+
+## v0.2.0 — 2026-09-13
 
 ### Deployed
 
@@ -64,9 +66,10 @@ Changes on `main` since the v0.1.0 tag, not yet cut as a new version.
   fixing" from "repaired and now conformant, with nothing left to fix" —
   previously it read the same either way, which contradicted the sub-line
   when earlier passes had, in fact, changed bytes.
-- The ISA fixed-width padding note is now a visible blue callout (matching
-  the amber "not conformant" callout's weight) instead of a easy-to-miss gray
-  hint line.
+- The ISA fixed-width padding note is now a soft-tinted callout that leads
+  with "This is expected, not an error:" instead of an easy-to-miss gray hint
+  line — deliberately without the bordered/accent-bar/icon-badge shape the
+  app's actual alerts use, so it reads as reassurance, not a failure.
 - The verdict now repeats at the end of the pass list, so a visitor who
   scrolled through several passes doesn't have to scroll back to the top to
   see the final status. The downloadable report moved from a small

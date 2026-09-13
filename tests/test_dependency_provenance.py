@@ -78,11 +78,17 @@ def test_pyproject_has_no_path_source_for_x12_tidy() -> None:
     )
 
 
+#: Local, gitignored tool caches -- never checked in, so a copy of x12_tidy
+#: mirrored into one of these (e.g. mypy following the import to cache its
+#: types) is not vendoring and must not trip this guard.
+_CACHE_DIRS = {".venv", ".git", ".mypy_cache", ".pytest_cache", ".ruff_cache", "__pycache__"}
+
+
 def test_no_vendored_x12_tidy_package_in_tree() -> None:
     """No copy of the x12_tidy package may be checked in anywhere under the repo."""
     offenders = [
         p
         for p in REPO_ROOT.rglob("x12_tidy")
-        if p.is_dir() and ".venv" not in p.parts and ".git" not in p.parts
+        if p.is_dir() and not _CACHE_DIRS.intersection(p.parts)
     ]
     assert not offenders, f"vendored x12_tidy package(s) found: {offenders}"
